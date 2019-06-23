@@ -22,11 +22,20 @@
           <div class="panel-heading">
             <div class="row">
                 <div class="col-md-3">
-                    <h2 class="panel-title">STAFF</h2>
+                    <h2 class="panel-title"><b>STAFF</b></h2>
                 </div>
                 <div class="col-md-4">
-                    <span style="font-size:12px;">SEARCH &nbsp;</span>
+                    <span style="font-size:12px;"><b>SEARCH</b> &nbsp;</span>
                     <input type="text" name="search" class="form-control" placeholder="Search for..." v-model="search" style="width: 80%;display: inline-block;">
+                </div>
+                <div class="col-md-5">
+                    <div style="float:right;">
+                    <span style="font-size:12px;"><b>SHOWING</b> &nbsp;</span>
+                    <select class="form-control" v-on:change="showing" style="width: 60%;display: inline-block;">
+                        <option value="">All</option>
+                        <option v-for="(department, index) in departments" :key="index" :value="department">{{department}}</option>
+                    </select>
+                    </div>
                 </div>
             </div>
           </div>
@@ -64,7 +73,8 @@ export default {
         {name: 'Jim', department: 'Primary', emp_number: '100001'},
         {name: 'Susi', department: 'Preschool', emp_number: '100005'},
         {name: 'Bambang', department: 'Primary', emp_number: '111002'},
-        {name: 'Andi', department: 'Preschool', emp_number: '100002'}
+        {name: 'Andi', department: 'Preschool', emp_number: '100002'},
+        {name: 'Asep', department: 'Laboratory', emp_number: '100042'}
       ]
     }
   },
@@ -73,6 +83,16 @@ export default {
       return this.datas.filter(data => {
         return data.name.toLowerCase().includes(this.search.toLowerCase()) || data.department.toLowerCase().includes(this.search.toLowerCase()) || data.emp_number.toString().includes(this.search.toLowerCase())
       })
+    },
+    /* Check if element have same value */
+    departments () {
+      return Array.from(new Set(this.datas.map(p => p.department)))
+    }
+  },
+  methods: {
+    showing (e) {
+      console.log(e.target.value)
+      this.search = e.target.value
     }
   }
 }
