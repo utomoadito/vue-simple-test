@@ -13,6 +13,11 @@
                 <span class="icon-bar"></span>
             <!-- </div> -->
           </button>
+          <div class="hidden-lg hidden-md hidden-sm">
+              <div style="float:right;">
+                <img src="@/assets/default-user.png" style="width:50px;">
+              </div>
+          </div>
         </div>
         <div class="hidden-xs">
             <div style="padding:10px;text-align:left;margin-bottom:20px;">
@@ -90,11 +95,20 @@ export default {
      border: unset;
      float: left;
   }
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+  }
   @media screen and (max-width: 767px){
     .sidebar{
       position: unset;
       width: unset;
       height: auto;
+    }
+    .nav{
+      border-top: unset !important;
+    }
+    .navbar-default .navbar-collapse {
+      border: unset;
     }
   }
 </style>
