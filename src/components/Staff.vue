@@ -1,55 +1,52 @@
 <template>
   <div class="row">
-    <div class="col-md-12">
+    <b-col md="12">
         <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-home"></i></a></li>
         </ol>
-    </div>
-    <div class="col-md-12">
+    </b-col>
+    <b-col md="12">
         <div class="row">
-            <div class="col-md-6 col-xs-7">
+            <b-col md="6" cols="7">
                 <h3 style="font-size:20px;"><b>STAFF DETAILS</b></h3>
-            </div>
-            <div class="col-md-6 col-xs-5">
-                <b-button pill variant="primary" size="sm" href="#" style="float:right;margin-top:10px;">
+            </b-col>
+            <b-col md="6" cols="5">
+                <b-button pill variant="primary" size="sm" href="#" style="float:right;font-size:13px;">
                     <i class="fa fa-plus"></i> Add Employee
                 </b-button>
-            </div>
+            </b-col>
         </div>
-    </div>
-    <div class="col-md-12">
-        <div class="panel panel-default" style="margin-top:20px;">
-          <div class="panel-heading">
+    </b-col>
+    <b-col md="12">
+        <b-card-group deck style="margin-top:20px;">
+          <b-card header-tag="header">
+          <div slot="header">
             <div class="row">
-                <div class="col-md-3 col-xs-12">
-                    <h2 class="panel-title"><b>STAFF</b></h2>
-                </div>
-                <div class="col-md-4 col-xs-12">
-                    <form class="form-inline">
-                      <div class="form-group">
-                        <label>Search</label>
-                        <input type="text" name="search" class="form-control" placeholder="Search for..." v-model="search" style="width:75%;display: inline-block;">
-                      </div>
-                    </form>
-                </div>
-                <div class="col-md-5 col-xs-12">
+                <b-col md="3" cols="12">
+                    <h5><b>STAFF</b></h5>
+                </b-col>
+                <b-col md="4" cols="12">
+                    <b-form inline>
+                        <label class="mr-sm-2">Search</label>
+                        <b-input type="text" name="search" placeholder="Search for..." v-model="search" style="width:75%;display: inline-block;"></b-input>
+                    </b-form>
+                </b-col>
+                <b-col md="5" cols="12">
                     <div class="right-filter">
-                        <form class="form-inline">
-                          <div class="form-group">
-                            <label>Showing</label>
-                                <select class="form-control" v-on:change="showing" style="width:60%;display:inline-block;">
-                                    <option value="">All</option>
-                                    <option v-for="(department, index) in departments" :key="index" :value="department">{{department}}</option>
-                                </select>
-                          </div>
-                        </form>
+                        <b-form inline>
+                            <label class="mr-sm-2">Showing</label>
+                            <select class="form-control" v-on:change="showing" style="width:60%;display:inline-block;">
+                                <option value="">All</option>
+                                <option v-for="(department, index) in departments" :key="index" :value="department">{{department}}</option>
+                            </select>
+                        </b-form>
                     </div>
-                </div>
+                </b-col>
             </div>
           </div>
-          <div class="panel-body">
+          <b-card-text>
             <div class="table-responsive">
-                <div class="hidden-xs">
+                <div class="d-none d-sm-block">
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -67,7 +64,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="hidden-lg hidden-md hidden-sm">
+                <div class="d-block d-sm-none">
                     <table class="table borderless table-mstriped">
                         <tbody v-for="(data, index) in staffs" :key="index">
                             <tr>
@@ -86,9 +83,10 @@
                     </table>
                 </div>
             </div>
-          </div>
-        </div>
-    </div>
+          </b-card-text>
+          </b-card>
+        </b-card-group>
+    </b-col>
   </div>
 </template>
 
