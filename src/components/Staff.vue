@@ -36,7 +36,7 @@
                     <div class="right-filter">
                         <form class="form-inline">
                           <div class="form-group">
-                            <label>Search</label>
+                            <label>Showing</label>
                                 <select class="form-control" v-on:change="showing" style="width:60%;display:inline-block;">
                                     <option value="">All</option>
                                     <option v-for="(department, index) in departments" :key="index" :value="department">{{department}}</option>

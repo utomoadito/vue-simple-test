@@ -1,6 +1,6 @@
 # vue-digitify
 
-> igitify Test)
+> Simple test Vue
 
 ## Build Setup
 
