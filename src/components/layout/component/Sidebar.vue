@@ -1,25 +1,15 @@
 <template>
-  <nav class="navbar navbar-default sidebar">
-    <div style="padding:10px;">
+  <b-navbar toggleable="lg" type="dark" class="sidebar">
+    <div style="padding:10px;height:100%;width:100%;">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" v-on:click="close = !close">
-            <span class="sr-only">Toggle navigation</span>
-            <!-- <div v-if="close">
-                <span class="icon-bar"></span>
-            </div>
-            <div v-else> -->
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            <!-- </div> -->
-          </button>
-          <div class="hidden-lg hidden-md hidden-sm">
+          <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+          <div class="d-block d-sm-none">
               <div style="float:right;">
-                <img src="@/assets/default-user.png" style="width:50px;">
+                <img src="@/assets/default-user.png" style="width:50px;margin-top:-65px;">
               </div>
           </div>
         </div>
-        <div class="hidden-xs">
+        <div class="d-none d-sm-block">
             <div style="padding:10px;text-align:left;margin-bottom:20px;">
                 <div style="float:left;">
                     <img src="@/assets/default-user.png" style="width:50px;">
@@ -30,24 +20,18 @@
                 </div>
             </div>
         </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav nav-pills nav-stacked" style="border-top:1px solid #363c84;">
-              <li role="presentation">
-                  <router-link :to="'/'">
-                      <i class="glyphicon glyphicon-home"></i>
-                      <span style="vertical-align:text-bottom;">DASHBOARD</span>
-                  </router-link>
-              </li>
-              <li role="presentation">
-                  <router-link :to="'staff'">
-                      <i class="glyphicon glyphicon-user"></i>
-                      <span style="vertical-align:text-bottom;">STAFF DETAILS</span>
-                  </router-link>
-              </li>
-            </ul>
-        </div>
+        <b-collapse id="nav-collapse" is-nav>
+            <b-nav pills style="border-top:1px solid #363c84;">
+              <b-nav-item :to="'/'">
+                  <i class="fa fa-home"></i>DASHBOARD
+              </b-nav-item>
+              <b-nav-item :to="'staff'">
+                  <i class="fa fa-user"></i>STAFF DETAILS
+              </b-nav-item>
+            </b-nav>
+        </b-collapse>
     </div>
-  </nav>
+  </b-navbar>
 </template>
 
 <script>
@@ -75,12 +59,15 @@ export default {
     width: 20%;
     height: 100%;
   }
+  .nav>li {
+    width: 100%;
+  }
   .nav>li>a {
     text-align: left;
     color: #e5f3ff;
   }
   .nav>li>a>i {
-    margin-right:20px;font-size:20px;
+    margin-right:20px;font-size:30px;
   }
   .nav>li>a:hover {
     background-color: #7887bd;

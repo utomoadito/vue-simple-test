@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-12">
         <ol class="breadcrumb">
-          <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+          <li><a href="#"><i class="fa fa-home"></i></a></li>
         </ol>
     </div>
     <div class="col-md-12">
@@ -11,9 +11,9 @@
                 <h3 style="font-size:20px;"><b>STAFF DETAILS</b></h3>
             </div>
             <div class="col-md-6 col-xs-5">
-                <a href="#" class="btn btn-md btn-primary" style="float:right;margin-top:10px;border-radius:50px;padding:1px 12px;">
-                    <h5 style="font-size:12px;"><i class="glyphicon glyphicon-plus"></i> ADD EMPLOYEE</h5>
-                </a>
+                <b-button pill variant="primary" size="sm" href="#" style="float:right;margin-top:10px;">
+                    <i class="fa fa-plus"></i> Add Employee
+                </b-button>
             </div>
         </div>
     </div>
